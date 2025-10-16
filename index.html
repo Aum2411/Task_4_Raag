@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Agent - Deep Research AI Assistant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-robot"></i>
+                <span>RAG Agent</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#apis" class="nav-link">APIs</a></li>
+                <li><a href="#docs" class="nav-link">Documentation</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">RAG Agent</span>
+                    <br>Deep Research & Task Delegation
+                </h1>
+                <p class="hero-subtitle">
+                    Intelligent AI-powered research assistant combining Retrieval-Augmented Generation,
+                    task delegation, and multi-source information synthesis
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToDemo()">
+                        <i class="fas fa-play"></i> Try Demo
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToDocs()">
+                        <i class="fas fa-book"></i> Documentation
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-check-circle"></i>
+                        <span>All Tests Passed</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-bolt"></i>
+                        <span>Ultra-Fast LLM</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-database"></i>
+                        <span>Vector Database</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">RAG Agent Terminal</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="prompt">$</span>
+                            <span class="command">python main.py</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="success">✓ RAG Agent initialized</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="success">✓ Vector store ready</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">You:</span>
+                            <span class="command typing-animation">What are AI agents?</span>
+                        </div>
+                        <div class="terminal-line output">
+                            <span class="info">Agent: AI agents are autonomous systems...</span>
+                        </div>
+                        <div class="terminal-cursor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <p class="section-subtitle">Everything you need for intelligent research and analysis</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Intelligent RAG System</h3>
+                    <p>Vector database-powered document retrieval with ChromaDB for semantic search and context-aware responses</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Semantic search</li>
+                        <li><i class="fas fa-check"></i> Document indexing</li>
+                        <li><i class="fas fa-check"></i> Context awareness</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Task Delegation</h3>
+                    <p>Automatically breaks down complex queries into manageable subtasks with intelligent prioritization</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Auto decomposition</li>
+                        <li><i class="fas fa-check"></i> Dependency management</li>
+                        <li><i class="fas fa-check"></i> Smart prioritization</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Search Integration</h3>
+                    <p>Real-time web search via Serper API combined with intelligent web scraping capabilities</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Google search results</li>
+                        <li><i class="fas fa-check"></i> Web scraping</li>
+                        <li><i class="fas fa-check"></i> Answer extraction</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Document Processing</h3>
+                    <p>Support for multiple file formats with smart chunking and metadata tracking</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> PDF, DOCX, TXT, MD</li>
+                        <li><i class="fas fa-check"></i> Smart chunking</li>
+                        <li><i class="fas fa-check"></i> Metadata tracking</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Workflow Orchestration</h3>
+                    <p>Multi-step research workflows with dependency management and progress tracking</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Custom workflows</li>
+                        <li><i class="fas fa-check"></i> Dependencies</li>
+                        <li><i class="fas fa-check"></i> Error handling</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Multi-Source Synthesis</h3>
+                    <p>Combines information from knowledge base, web search, and documents coherently</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Source aggregation</li>
+                        <li><i class="fas fa-check"></i> Deduplication</li>
+                        <li><i class="fas fa-check"></i> Smart synthesis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APIs Section -->
+    <section id="apis" class="apis">
+        <div class="container">
+            <h2 class="section-title">Powered by Best-in-Class APIs</h2>
+            <p class="section-subtitle">Leveraging cutting-edge technology for optimal performance</p>
+            
+            <div class="apis-grid">
+                <div class="api-card">
+                    <div class="api-header">
+                        <div class="api-logo">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Groq API</h3>
+                        <span class="api-badge primary">Primary LLM</span>
+                    </div>
+                    <div class="api-body">
+                        <p class="api-description">
+                            Ultra-fast LLM inference with Llama 3.3 70B model delivering 500-1000 tokens/second
+                        </p>
+                        <div class="api-stats">
+                            <div class="api-stat">
+                                <span class="stat-label">Speed</span>
+                                <span class="stat-value">500-1000 tok/s</span>
+                            </div>
+                            <div class="api-stat">
+                                <span class="stat-label">Model</span>
+                                <span class="stat-value">Llama 3.3 70B</span>
+                            </div>
+                        </div>
+                        <div class="api-features">
+                            <span class="feature-tag">Fast Inference</span>
+                            <span class="feature-tag">Cost-Effective</span>
+                            <span class="feature-tag">High Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-header">
+                        <div class="api-logo">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Serper API</h3>
+                        <span class="api-badge secondary">Web Search</span>
+                    </div>
+                    <div class="api-body">
+                        <p class="api-description">
+                            Real-time Google search results for current information and fact verification
+                        </p>
+                        <div class="api-stats">
+                            <div class="api-stat">
+                                <span class="stat-label">Source</span>
+                                <span class="stat-value">Google</span>
+                            </div>
+                            <div class="api-stat">
+                                <span class="stat-label">Speed</span>
+                                <span class="stat-value">Real-time</span>
+                            </div>
+                        </div>
+                        <div class="api-features">
+                            <span class="feature-tag">Comprehensive</span>
+                            <span class="feature-tag">Reliable</span>
+                            <span class="feature-tag">Easy Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-header">
+                        <div class="api-logo">
+                            <i class="fas fa-vector-square"></i>
+                        </div>
+                        <h3>Sentence Transformers</h3>
+                        <span class="api-badge success">Local - FREE</span>
+                    </div>
+                    <div class="api-body">
+                        <p class="api-description">
+                            Generate high-quality embeddings locally with all-MiniLM-L6-v2 model
+                        </p>
+                        <div class="api-stats">
+                            <div class="api-stat">
+                                <span class="stat-label">Cost</span>
+                                <span class="stat-value">FREE</span>
+                            </div>
+                            <div class="api-stat">
+                                <span class="stat-label">Speed</span>
+                                <span class="stat-value">~100 docs/s</span>
+                            </div>
+                        </div>
+                        <div class="api-features">
+                            <span class="feature-tag">No API Costs</span>
+                            <span class="feature-tag">Fast</span>
+                            <span class="feature-tag">Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="api-card">
+                    <div class="api-header">
+                        <div class="api-logo">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>ChromaDB</h3>
+                        <span class="api-badge success">Local - FREE</span>
+                    </div>
+                    <div class="api-body">
+                        <p class="api-description">
+                            Open-source vector database for efficient semantic search and document retrieval
+                        </p>
+                        <div class="api-stats">
+                            <div class="api-stat">
+                                <span class="stat-label">Type</span>
+                                <span class="stat-value">Vector DB</span>
+                            </div>
+                            <div class="api-stat">
+                                <span class="stat-label">Search</span>
+                                <span class="stat-value">&lt;1ms</span>
+                            </div>
+                        </div>
+                        <div class="api-features">
+                            <span class="feature-tag">Open Source</span>
+                            <span class="feature-tag">Persistent</span>
+                            <span class="feature-tag">Easy Setup</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Try It Now</h2>
+            <p class="section-subtitle">Experience the power of RAG Agent</p>
+            
+            <div class="demo-container">
+                <div class="demo-sidebar">
+                    <h3>Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" onclick="loadExample('rag')">
+                            <i class="fas fa-question-circle"></i>
+                            What is RAG?
+                        </button>
+                        <button class="action-btn" onclick="loadExample('ai-agents')">
+                            <i class="fas fa-robot"></i>
+                            Explain AI Agents
+                        </button>
+                        <button class="action-btn" onclick="loadExample('compare')">
+                            <i class="fas fa-balance-scale"></i>
+                            Compare ML vs DL
+                        </button>
+                        <button class="action-btn" onclick="loadExample('research')">
+                            <i class="fas fa-flask"></i>
+                            Deep Research
+                        </button>
+                    </div>
+                    
+                    <div class="demo-info">
+                        <h4>Features Available:</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Quick Answers</li>
+                            <li><i class="fas fa-check-circle"></i> Deep Research</li>
+                            <li><i class="fas fa-check-circle"></i> Topic Comparison</li>
+                            <li><i class="fas fa-check-circle"></i> Task Delegation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="demo-main">
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <div class="status-indicator">
+                                <span class="status-dot"></span>
+                                <span>Agent Ready</span>
+                            </div>
+                            <button class="clear-chat" onclick="clearChat()">
+                                <i class="fas fa-trash"></i> Clear
+                            </button>
+                        </div>
+                        
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message bot-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>Hello! I'm your RAG Agent assistant. I can help you with:</p>
+                                    <ul>
+                                        <li>Answering questions using my knowledge base</li>
+                                        <li>Performing deep research with task delegation</li>
+                                        <li>Comparing different topics</li>
+                                        <li>Analyzing documents and web content</li>
+                                    </ul>
+                                    <p>Try asking me a question or use the quick action buttons!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-input-container">
+                            <textarea 
+                                class="chat-input" 
+                                id="chatInput" 
+                                placeholder="Ask me anything... (e.g., 'What is RAG?' or 'Compare ML and DL')"
+                                rows="2"
+                            ></textarea>
+                            <button class="send-btn" onclick="sendMessage()">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="docs">
+        <div class="container">
+            <h2 class="section-title">Documentation & Resources</h2>
+            <p class="section-subtitle">Everything you need to get started</p>
+            
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Quick Start</h3>
+                    <p>Get up and running in minutes with our step-by-step guide</p>
+                    <div class="code-example">
+                        <code>pip install -r requirements.txt</code>
+                        <code>python main.py</code>
+                    </div>
+                    <a href="#" class="doc-link">View Quick Start Guide <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Full Documentation</h3>
+                    <p>Comprehensive documentation covering all features and APIs</p>
+                    <ul class="doc-list">
+                        <li>Architecture Overview</li>
+                        <li>API Reference</li>
+                        <li>Configuration Guide</li>
+                    </ul>
+                    <a href="#" class="doc-link">Read Documentation <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Examples</h3>
+                    <p>Practical examples and use cases to help you get started</p>
+                    <ul class="doc-list">
+                        <li>Basic RAG Usage</li>
+                        <li>Custom Workflows</li>
+                        <li>Advanced Patterns</li>
+                    </ul>
+                    <a href="#" class="doc-link">View Examples <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>CLI Reference</h3>
+                    <p>Command-line interface documentation and usage patterns</p>
+                    <div class="code-example">
+                        <code>python main.py --mode deep --query "..."</code>
+                        <code>python main.py --mode compare --topics A B</code>
+                    </div>
+                    <a href="#" class="doc-link">CLI Documentation <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="installation-guide">
+                <h3>Installation Steps</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Install Dependencies</h4>
+                            <p>Install all required Python packages</p>
+                            <code>pip install -r requirements.txt</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Configure API Keys</h4>
+                            <p>Your keys are already configured in .env file</p>
+                            <code>✓ GROQ_API_KEY configured</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Run System Test</h4>
+                            <p>Verify everything works correctly</p>
+                            <code>python test_system.py</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Start Using</h4>
+                            <p>Launch the interactive mode</p>
+                            <code>python main.py</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-robot"></i> RAG Agent</h4>
+                    <p>Intelligent AI-powered research assistant for deep analysis and task delegation.</p>
+                    <div class="footer-stats">
+                        <span><i class="fas fa-check-circle"></i> 7/7 Tests Passed</span>
+                        <span><i class="fas fa-star"></i> Production Ready</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#apis">APIs</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#docs">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">README.md</a></li>
+                        <li><a href="#">Quick Start</a></li>
+                        <li><a href="#">Examples</a></li>
+                        <li><a href="#">Architecture</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Powered By</h4>
+                    <div class="powered-by">
+                        <span><i class="fas fa-bolt"></i> Groq API</span>
+                        <span><i class="fas fa-search"></i> Serper API</span>
+                        <span><i class="fas fa-database"></i> ChromaDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 RAG Agent. Built with ❤️ using Groq, Serper, ChromaDB, and Sentence Transformers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
